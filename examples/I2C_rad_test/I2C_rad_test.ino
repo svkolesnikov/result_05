@@ -3,9 +3,7 @@
 #include "radSens1v2.h"
 
 
-ClimateGuard_RadSens1v2 rаdSens(RS_DEFAULT_I2C_ADDRESS); /*Constructor of the class ClimateGuard_RadSens1v2,
-                                                           sets the address parameter of I2C sensor.
-                                                           Default address: 0x66.*/
+ClimateGuard_RadSens1v2 radSens(RS_DEFAULT_I2C_ADDRESS); 
 
 
 void setup() 
@@ -18,7 +16,7 @@ void setup()
   uint8_t sensorChipId = radSens.getChipId(); /*Returns chip id, default value: 0x7D.*/
 
   Serial.print("Chip id: 0x");
-  Serial.println(sensorChipId, HEX)
+  Serial.println(sensorChipId, HEX);
 
   uint8_t firmWareVer = radSens.getFirmwareVersion(); /*Returns firmware version.*/
 
@@ -69,7 +67,7 @@ void setup()
 
 void loop(){
   Serial.print("Rad intensy dyanmic: ");
-  int RAD =radSens.getRadIntensyDyanmic
+  int RAD =radSens.getRadIntensyDyanmic();
   Serial.println(RAD); /*Returns radiation intensity (dynamic period T < 123 sec).*/
 
   Serial.print("Rad intensy static: ");
